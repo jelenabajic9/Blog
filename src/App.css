@@ -1,38 +1,236 @@
-.App {
-  text-align: center;
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: "Inter";
+    overflow-x: hidden;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 0;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header ul {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+header ul li{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+header ul li.logo {
+    width: 100%;
+  max-width: 150px;
+  height: 95px;
+}
+header ul li.logo img{
+  width: 100%;
+ height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+header ul li.add-post{
+    width: 100%;
+  max-width: 150px;
+  height: 45px;
+}
+header ul li.add-post a{
+  width: 100%;
+  height: 100%;
+  background-color: #3498db;
   color: white;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.max-width{
+  width: 100%;
+  max-width: 1364px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home-page {
+  padding-top: 40px;
+}
+.home-page h1{
+  text-align: center;
+  font-size: 35px;
+}
+.blog-gallery{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 50px 0;
+  row-gap: 40px;
+}
+.blog-gallery .post{
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+    width: 100%;
+  max-width: 400px;
+}
+ .blog-gallery .post a{
+  width: 100%;
+display: block;
+text-decoration: none;
+}
+.blog-gallery .post a .blog-img{
+  width: 100%;
+  height: 200px;
+}
+.blog-gallery .post a .blog-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.App-link {
-  color: #61dafb;
+
+.blog-gallery .post a .blog-info{
+  padding: 20px 20px;
+  background-color: rgb(203, 206, 206);
+  color: black;
+  text-align: center;
+  min-height: 155px;
+}
+.blog-gallery .post a .blog-info h3{
+  padding-top: 5px;
+} 
+
+.blog-page {
+  padding: 50px 0;
+}
+.blog-page .blog .blog-image{
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.blog-page .blog .blog-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.blog-page .blog .author {
+  padding: 20px 0;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; 
+  animation: spin 2s linear infinite;
+  margin: auto;
+  grid-column: span 3;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.add-blog-form{
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.add-blog-form label{
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.add-blog-form input{
+  width: 100%;
+  border: 1px solid rgb(86, 84, 84);
+  padding: 12px 20px;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.add-blog-form textarea{
+  width: 100%;
+  border: 1px solid rgb(86, 84, 84);
+  padding: 12px 20px;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  height: 150px;
+  resize: none;
+}
+.add-blog-form input, textarea:focus{
+outline: none;
+}
+.add-blog-form button{
+    width: 100%;
+    max-width: 200px;
+  height: 45px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.add-blog-form input::placeholder, textarea::placeholder{
+  font-family: "Inter";
+}
+
+.around-loader{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(106, 103, 103, 0.4);
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.around-loader .loader{
+position: relative;
+z-index: 99;
 }
